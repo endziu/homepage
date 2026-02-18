@@ -1,0 +1,9 @@
+.next
+.vscode
+node_modules
+desktop.ini
+.DS_store
+style.css
+package-lock.json
+notes.md
+.claude/

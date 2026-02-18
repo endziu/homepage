@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="endziu.xyz - music, sounds &amp; JavaScript" />
+  <title>endziu.xyz — music</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="font-sans text-black/80 min-h-screen">
+  <div class="max-w-5xl mx-auto px-2 md:px-4 lg:px-8">
+
+    <header class="py-1 pl-2 lg:p-4 border-b-2 border-green-500">
+      <nav class="text-xl md:text-2xl flex items-center">
+        <a href="index.html" class="text-black/80 hover:text-blue-500 no-underline mr-4">endziu.xyz</a>
+        <a href="music.html" class="text-yellow-500 no-underline mr-4">music</a>
+        <a href="projects.html" class="text-black/80 hover:text-red-500 no-underline mr-4">projects</a>
+      </nav>
+    </header>
+
+    <audio id="audio" preload="metadata" style="width:100%"></audio>
+
+    <section id="wave" class="relative h-32 my-6 max-w-5xl mx-auto cursor-pointer">
+      <img id="waveform" class="w-full h-full block" style="object-fit:fill" src="" alt="waveform" />
+      <div
+        id="progress-bar"
+        class="absolute top-0 left-0 h-full bg-black/10 border-r-2 border-orange-500"
+        style="width:0%; transition: width 0.1s ease-in-out"
+      ></div>
+    </section>
+
+    <section class="max-w-5xl mx-auto">
+      <div id="controls" class="flex items-center gap-3 flex-wrap my-3">
+
+        <button id="btn-prev" class="ctrl-btn" title="previous">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="blue">
+            <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
+          </svg>
+        </button>
+
+        <button id="btn-next" class="ctrl-btn" title="next">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="blue">
+            <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
+          </svg>
+        </button>
+
+        <button id="btn-play" class="ctrl-btn" title="play">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="green">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </button>
+
+        <button id="btn-pause" class="ctrl-btn" title="pause">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="orange">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+          </svg>
+        </button>
+
+        <button id="btn-stop" class="ctrl-btn" title="stop">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="red">
+            <path d="M6 6h12v12H6z" />
+          </svg>
+        </button>
+
+        <span class="flex items-center gap-1 relative -top-0.5 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="lime">
+            <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z" />
+          </svg>
+          <input type="checkbox" id="autoplay-checkbox" checked />
+        </span>
+
+        <span class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 32 32" class="relative -top-0.5">
+            <path d="M2 12 L8 12 L16 6 L16 26 L8 20 L2 20 z M32 16 A16 16 0 0 1 27.25 27.375 L25.25 25.25 A13 13 0 0 0 29 16 A13 13 0 0 0 25.25 6.75 L27.25 4.625 A16 16 0 0 1 32 16 M25 16 A9 9 0 0 1 22.375 22.375 L20.25 20.25 A6 6 0 0 0 22 16 A6 6 0 0 0 20.25 11.75 L22.375 9.625 A9 9 0 0 1 25 16" />
+          </svg>
+          <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.707" class="mr-2" />
+        </span>
+
+      </div>
+
+      <ul id="track-list" class="list-none my-6 p-0"></ul>
+    </section>
+
+    <footer class="fixed bottom-0 right-0 p-1">
+      <a href="https://endziu.xyz" class="text-sm text-black no-underline hover:underline">©</a>
+    </footer>
+
+  </div>
+
+  <script src="music.js"></script>
+</body>
+</html>

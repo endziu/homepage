@@ -1,0 +1,1 @@
+This is a Brave Payments publisher verification file.Domain: endziu.xyzToken: 569dae1e622315259d6a2e340dfa5b6763a6b413cd077f1758e774ac0b795fa4

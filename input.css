@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background: #f1f1f1;
+  }
+}
+
+@layer components {
+  .track-link {
+    @apply cursor-pointer text-sm md:text-base lg:text-lg hover:text-white hover:bg-black/30 block px-1;
+  }
+  .track-link.active {
+    @apply text-black bg-yellow-400 px-3 hover:bg-yellow-400 hover:text-black;
+  }
+  .ctrl-btn {
+    @apply cursor-pointer hover:opacity-70 bg-transparent border-0 p-0 inline-flex items-center;
+  }
+}
