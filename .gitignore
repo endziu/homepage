@@ -4,6 +4,8 @@ node_modules
 desktop.ini
 .DS_store
 style.css
+dist/
 package-lock.json
+bun.lock
 notes.md
 .claude/
