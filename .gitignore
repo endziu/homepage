@@ -7,5 +7,5 @@ style.css
 dist/
 package-lock.json
 bun.lock
-notes.md
 .claude/
+.notes.md
