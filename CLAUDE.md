@@ -30,8 +30,6 @@ This is a plain HTML + Tailwind CSS + vanilla JS personal website (endziu.xyz) b
 
 **Music player** (`music.html` + `music.js`) — entirely self-contained vanilla JS. The `tracks` array in `music.js` is the data source; each entry has a `title`, `waveform_url` (PNG in `public/waves/`), and `sound_url` (MP3 in `public/sounds/`). The player uses the HTML5 `<audio>` element with click-to-seek on the waveform image. Volume uses a square-law curve (`value²` for setting, `√value` for display).
 
-**Canvas sub-project** (`public/canvas/`) — a standalone canvas physics demo with its own module structure (`js/app.js`, `js/particle.js`, `js/vector.js`, etc.) pre-bundled into `public/canvas/dist/bundle.js`. This is independent of the Vite build and uses its own inline CSS.
-
 **Static assets** live under `public/` and are served at `/` by Vite (copied as-is to `dist/` on build):
 - `public/imgs/` — project thumbnail images
 - `public/sounds/` — MP3 audio tracks
