@@ -21,7 +21,6 @@ const tracks = [
 const state = {
   current: 0,
   volume: 0.5,
-  autoplay: true,
 }
 
 const audio           = document.getElementById('audio')
@@ -29,7 +28,6 @@ const waveImg         = document.getElementById('waveform')
 const progressBar     = document.getElementById('progress-bar')
 const waveSection     = document.getElementById('wave')
 const volumeSlider    = document.getElementById('volume-slider')
-const autoplayCheck   = document.getElementById('autoplay-checkbox')
 const trackList       = document.getElementById('track-list')
 
 // ── track loading ──────────────────────────────────────────────────────────────
@@ -52,7 +50,7 @@ audio.addEventListener('loadeddata', () => {
   audio.currentTime = 0
   audio.volume = state.volume
   volumeSlider.value = Math.pow(state.volume, 0.5)
-  if (state.autoplay) audio.play()
+  audio.play()
 })
 
 audio.addEventListener('timeupdate', () => {
@@ -61,7 +59,7 @@ audio.addEventListener('timeupdate', () => {
 })
 
 audio.addEventListener('ended', () => {
-  if (state.autoplay) loadTrack(clamp(state.current + 1))
+  loadTrack(clamp(state.current + 1))
 })
 
 // ── waveform click to seek ─────────────────────────────────────────────────────
@@ -83,10 +81,6 @@ document.getElementById('btn-stop').addEventListener('click',  () => { audio.pau
 volumeSlider.addEventListener('input', (e) => {
   state.volume = Math.pow(parseFloat(e.target.value), 2)
   audio.volume = state.volume
-})
-
-autoplayCheck.addEventListener('change', (e) => {
-  state.autoplay = e.target.checked
 })
 
 // ── track list ─────────────────────────────────────────────────────────────────

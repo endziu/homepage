@@ -39,3 +39,7 @@ This is a plain HTML + Tailwind CSS + vanilla JS personal website (endziu.xyz) b
 Asset references in HTML and JS use root-absolute paths (e.g. `/imgs/foo.jpg`, `/sounds/bar.mp3`) — not `public/` prefixed paths.
 
 To add a track to the music player, add a matching MP3 to `public/sounds/`, a waveform PNG to `public/waves/`, and an entry to the `tracks` array in `music.js`.
+
+To add a project to `projects.html`, add a thumbnail JPG to `public/imgs/` and copy an existing `<article>` block into the appropriate section (`current` or `legacy`). All project thumbnails use the same square aspect-ratio card pattern with hover zoom.
+
+`style.css` at the repo root is a stale compiled Tailwind output — it is not referenced anywhere and can be ignored.
