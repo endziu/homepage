@@ -3,16 +3,16 @@ const tracks = [
   { title: "a melody",            waveform_url: "/waves/a-melody.png",            sound_url: "/sounds/a-melody.mp3" },
   { title: "binary blob",         waveform_url: "/waves/binary-blob.png",         sound_url: "/sounds/binary-blob.mp3" },
   { title: "efix",                waveform_url: "/waves/efix.png",                sound_url: "/sounds/efix.mp3" },
-  { title: "emisions",            waveform_url: "/waves/Emisions.png",            sound_url: "/sounds/Emisions.mp3" },
+  { title: "emisions",            waveform_url: "/waves/emisions.png",            sound_url: "/sounds/emisions.mp3" },
   { title: "kliks radio",         waveform_url: "/waves/kliks-radio.png",         sound_url: "/sounds/kliks-radio.mp3" },
-  { title: "ganges",              waveform_url: "/waves/Ganges.png",              sound_url: "/sounds/Ganges.mp3" },
+  { title: "ganges",              waveform_url: "/waves/ganges.png",              sound_url: "/sounds/ganges.mp3" },
   { title: "lengths",             waveform_url: "/waves/lengths.png",             sound_url: "/sounds/lengths.mp3" },
   { title: "micro situations",    waveform_url: "/waves/micro-situations.png",    sound_url: "/sounds/micro-situations.mp3" },
-  { title: "plugged in for a while", waveform_url: "/waves/Plugged-in-for-a-while.png", sound_url: "/sounds/Plugged-in-for-a-while.mp3" },
+  { title: "plugged in for a while", waveform_url: "/waves/plugged-in-for-a-while.png", sound_url: "/sounds/plugged-in-for-a-while.mp3" },
   { title: "prep2",               waveform_url: "/waves/prep2.png",               sound_url: "/sounds/prep2.mp3" },
-  { title: "pół kawałka",         waveform_url: "/waves/P\u00f3\u0142-Kawa\u0142ka.png", sound_url: "/sounds/P\u00f3\u0142-Kawa\u0142ka.mp3" },
+  { title: "pół kawałka",         waveform_url: "/waves/pół-kawałka.png",         sound_url: "/sounds/pół-kawałka.mp3" },
   { title: "scenario",            waveform_url: "/waves/scenario.png",            sound_url: "/sounds/scenario.mp3" },
-  { title: "shtokha zen",         waveform_url: "/waves/Shtokha-Zen.png",         sound_url: "/sounds/Shtokha-Zen.mp3" },
+  { title: "shtokha zen",         waveform_url: "/waves/shtokha-zen.png",         sound_url: "/sounds/shtokha-zen.mp3" },
   { title: "tapes",               waveform_url: "/waves/tapes.png",               sound_url: "/sounds/tapes.mp3" },
   { title: "trigger",             waveform_url: "/waves/trigger.png",             sound_url: "/sounds/trigger.mp3" },
   { title: "untuned garden",      waveform_url: "/waves/untuned-garden.png",      sound_url: "/sounds/untuned-garden.mp3" },
@@ -60,6 +60,10 @@ audio.addEventListener('timeupdate', () => {
 
 audio.addEventListener('ended', () => {
   loadTrack(clamp(state.current + 1))
+})
+
+audio.addEventListener('error', () => {
+  console.error('Audio failed to load:', audio.src)
 })
 
 // ── waveform click to seek ─────────────────────────────────────────────────────
