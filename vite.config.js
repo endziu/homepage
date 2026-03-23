@@ -8,7 +8,6 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         music: resolve(__dirname, 'music.html'),
-        projects: resolve(__dirname, 'projects.html'),
       },
     },
   },
